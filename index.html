@@ -809,39 +809,35 @@ body.natal-theme .badge {
   border-radius: 12px;
   padding: 4px 8px;
 }
-/* === Neve caindo no Natal === */
-body.natal-theme {
-  background: linear-gradient(180deg, #b30000 0%, #8b0000 100%);
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Camada 1 de neve */
+/* === Neve caindo no Natal (camadas menos aparentes) === */
 body.natal-theme::before,
 body.natal-theme::after {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url("https://i.imgur.com/o3XQYTZ.png"); /* textura transparente de neve */
+  background-image: url("https://img.freepik.com/vetores-gratis/fundo-vermelho-de-natal-com-flocos-de-neve-e-design-de-luzes-bokeh_1048-14954.jpg");
   background-repeat: repeat;
   background-size: 250px 250px;
   animation: snow 30s linear infinite;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.2; /* menos aparente */
 }
 
 /* Camada 2 para profundidade */
 body.natal-theme::after {
   background-size: 400px 400px;
   animation-duration: 60s;
-  opacity: 0.5;
+  opacity: 0.1; /* ainda mais sutil */
 }
 
 @keyframes snow {
   from { background-position: 0 -100%; }
   to   { background-position: 0 100%; }
 }
+
+
 
 
   </style>
