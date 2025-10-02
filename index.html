@@ -736,95 +736,138 @@ body.kids-theme .toast i {
   margin-right: 5px;
   font-style: normal;
 }
-/* Tema Natal */
+/* ===== TEMA NATAL ===== */
 body.natal-theme {
-  background: linear-gradient(180deg, #f9f3e7 0%, #fffafa 100%);
-  color: #3b1d0b;
-  font-family: 'Montserrat', sans-serif;
-  transition: background 0.5s, color 0.5s;
-}
-
-body.natal-theme .card {
-  border: 2px solid #c1272d;
-  border-radius: 14px;
-  background: #fff5f0;
-  box-shadow: 0 4px 12px rgba(193, 39, 45, 0.25);
+  background: linear-gradient(180deg, #b30000 0%, #8b0000 100%);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* ❄️ Neve caindo (camada dupla para realismo) */
+body.natal-theme::before,
+body.natal-theme::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/014/441/479/non_2x/snowflake-decorations-free-png.png'); /* imagem transparente de flocos */
+  background-size: 250px 250px;
+  animation: neve 30s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+body.natal-theme::after {
+  background-size: 400px 400px;
+  animation-duration: 60s;
+  opacity: 0.4;
+}
+
+@keyframes neve {
+  from { background-position: 0 -100%; }
+  to   { background-position: 0 100%; }
+}
+
+/* === Cards no Natal === */
+body.natal-theme .card {
+  background: #fffdf9;
+  border-radius: 16px;
+  border: 2px solid #d4af37; /* dourado */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
 }
-
 body.natal-theme .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(193, 39, 45, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
-/* Badges */
-body.natal-theme .badge-novo {
-  background: #c1272d;
-  color: #fff;
+/* Nome e descrição */
+body.natal-theme .card h4 {
+  color: #b30000;
+  font-weight: 700;
 }
-body.natal-theme .badge-soon {
-  background: #f9a825;
-  color: #fff;
+body.natal-theme .card .desc {
+  color: #333;
 }
 
-/* Esgotado */
-body.natal-theme .soldout-label {
-  background: #c1272d;
-  color: #fff;
+/* Preço verde natal */
+body.natal-theme .card .price {
+  color: #006400;
   font-weight: bold;
-  padding: 3px 6px;
-  border-radius: 4px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  font-size: 1.1rem;
 }
 
-/* Botões */
+/* Botão comprar natalino */
 body.natal-theme .btn.primary {
-  background-color: #c1272d;
+  background: linear-gradient(135deg, #b30000, #8b0000);
   color: #fff;
-  border-radius: 6px;
-  transition: background 0.3s;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(179,0,0,0.3);
+  transition: all 0.3s ease;
 }
 body.natal-theme .btn.primary:hover {
-  background-color: #8b1a20;
+  background: #d4af37;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(212,175,55,0.5);
 }
+
+/* Botão ghost */
 body.natal-theme .btn.ghost {
-  border: 2px solid #c1272d;
-  color: #c1272d;
+  border: 1px solid #b30000;
+  color: #b30000;
 }
 body.natal-theme .btn.ghost:hover {
-  background-color: #c1272d;
+  background: #b30000;
   color: #fff;
 }
 
-/* Modal Natal */
-body.natal-theme #modalBackdrop {
-  background-color: rgba(193,39,45,0.9);
-}
-body.natal-theme #modal .content {
-  background: #fff5f0;
-  border: 2px solid #c1272d;
+/* Badges (novidade/em breve) em versão dourada no Natal */
+body.natal-theme .badge {
+  background: #d4af37;
+  color: #000;
+  font-weight: bold;
   border-radius: 12px;
+  padding: 4px 8px;
+}
+/* === Neve caindo no Natal === */
+body.natal-theme {
+  background: linear-gradient(180deg, #b30000 0%, #8b0000 100%);
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Pequenas decorações natalinas nos cards */
-body.natal-theme .card::before {
-  content: '🎄';
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  font-size: 1.2rem;
+/* Camada 1 de neve */
+body.natal-theme::before,
+body.natal-theme::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("https://i.imgur.com/o3XQYTZ.png"); /* textura transparente de neve */
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  animation: snow 30s linear infinite;
+  z-index: 0;
+  pointer-events: none;
 }
-body.natal-theme .card::after {
-  content: '❄️';
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  font-size: 1rem;
+
+/* Camada 2 para profundidade */
+body.natal-theme::after {
+  background-size: 400px 400px;
+  animation-duration: 60s;
+  opacity: 0.5;
 }
+
+@keyframes snow {
+  from { background-position: 0 -100%; }
+  to   { background-position: 0 100%; }
+}
+
+
   </style>
 </head>
 <body>
@@ -3223,6 +3266,29 @@ filterChips.forEach(chip => {
       hpAudio.currentTime = 0;
     } else {
       body.classList.remove('hp-theme', 'kids-theme');
+      hpAudio.pause();
+      hpAudio.currentTime = 0;
+    }
+  });
+});
+// === Tema Natal ===
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    if (chip.dataset.category === 'natal') {
+      body.classList.add('natal-theme');
+      body.classList.remove('hp-theme', 'kids-theme');
+    } else if (chip.dataset.category === 'harry') {
+      body.classList.add('hp-theme');
+      body.classList.remove('kids-theme', 'natal-theme');
+      hpAudio.currentTime = 0;
+      hpAudio.play();
+    } else if (chip.dataset.category === 'kids') {
+      body.classList.add('kids-theme');
+      body.classList.remove('hp-theme', 'natal-theme');
+      hpAudio.pause();
+      hpAudio.currentTime = 0;
+    } else {
+      body.classList.remove('hp-theme', 'kids-theme', 'natal-theme');
       hpAudio.pause();
       hpAudio.currentTime = 0;
     }
