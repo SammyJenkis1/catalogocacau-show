@@ -743,29 +743,6 @@ body.natal-theme {
   overflow-x: hidden;
 }
 
-/* ❄️ Neve caindo (camada dupla para realismo) */
-body.natal-theme::before,
-body.natal-theme::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-size: 250px 250px;
-  animation: neve 30s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.7;
-}
-body.natal-theme::after {
-  background-size: 400px 400px;
-  animation-duration: 60s;
-  opacity: 0.4;
-}
-
-@keyframes neve {
-  from { background-position: 0 -100%; }
-  to   { background-position: 0 100%; }
-}
-
 /* === Cards no Natal === */
 body.natal-theme .card {
   background: #fffdf9;
@@ -1027,10 +1004,10 @@ body.natal-theme::after {
         <button class="chip" data-category="caixas">Caixas e presentes</button>
         <button class="chip" data-category="kids">Crianças</button>
         <button class="chip" data-category="harry">Harry Potter</button>
+        <button class="chip" data-category="natal">Natal</button>
         <button class="chip" data-category="life">Linha Lifestyle</button>
         <button class="chip" data-category="servico">Serviços e Sobremesas</button>
         <button class="chip" data-category="cestas">Cestas</button>
-        <button class="chip" data-category="natal">Natal</button>
       </div>
     </div>
 
