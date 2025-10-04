@@ -836,8 +836,100 @@ body.natal-theme::after {
   from { background-position: 0 -100%; }
   to   { background-position: 0 100%; }
 }
+/* CONTAGEM REGRESSIVA NATAL */
+.countdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #c62828, #e53935);
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: 'Mountains of Christmas', cursive;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  border: 3px solid #ffd700;
+  overflow: hidden;
+}
 
+/* Título com emojis natalinos */
+.countdown h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px #000;
+}
 
+/* Container dos números */
+.countdown .time {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Box dos números */
+.countdown .time-box {
+  background: #ff3d00;
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(255,215,0,0.9), 0 3px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border: 1px solid #ffd700;
+}
+
+/* Números com brilho dourado */
+.countdown .time-box span {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-shadow: 0 0 6px #ffd700, 1px 1px 2px #000;
+}
+
+/* Labels */
+.countdown .time-box .label {
+  font-size: 0.7rem;
+  margin-top: 2px;
+  color: #ffe082;
+  text-shadow: 1px 1px 2px #000;
+  letter-spacing: 1px;
+}
+
+/* Hover natalino */
+.countdown .time-box:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 20px #ffd700, 0 6px 12px rgba(0,0,0,0.5);
+}
+
+/* Luzes de Natal piscando */
+.countdown .lights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.countdown .lights span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffeb3b;
+  animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(1); }
+}
 
 
   </style>
@@ -864,8 +956,26 @@ body.natal-theme::after {
     <svg viewBox="0 0 16 16" class="socialSvg instagramSvg"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
   </a>
 </div>             
-
-
+<div id="natal-countdown" class="countdown" style="display:none;">
+  <div class="garland">
+    <span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span>
+  </div>
+  <h3>🎄 Contagem Regressiva para o Natal! 🎄</h3>
+  <div class="time">
+    <div class="time-box"><span id="dias">0</span><span class="label">dias</span></div>
+    <div class="time-box"><span id="horas">0</span><span class="label">h</span></div>
+    <div class="time-box"><span id="minutos">0</span><span class="label">min</span></div>
+    <div class="time-box"><span id="segundos">0</span><span class="label">s</span></div>
+  </div>
+  <div class="decorations">
+    <span class="tree">🎄</span>
+    <span class="star">⭐</span>
+    <span class="tree">🎄</span>
+    <span class="star">⭐</span>
+  </div>
+  <div class="snow"></div>
+</div>
     </header>
 
     <div id="cartWidget">
@@ -3073,32 +3183,32 @@ body.natal-theme::after {
     imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw8dc17f04/large/1003806_1.png",
   },{
     id: 247,
-    nome: "Shoulder Bag Bob Esponja",
+    nome: "Copo CLaudete | 750ml",
     categoria: "kids",
-    descricao: "Shoulder bag do Bob Esponja. A Shoulder bag mais divertida e cheia de estilo!",
-    preco: 49.99,
-    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw26c22988/large/1003575_3.png",
+    descricao: "Copo da monstrinha Claudete com 750ml e bombons ao leite recheados sabor brigadeiro",
+    preco: 79.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw2fa81ce0/medium/1003807_1.png",
   },{
     id: 248,
-    nome: "Mochila ludovico",
+    nome: "Cesta Chocomonstros da Monstrinha Claudete",
     categoria: "kids",
-    descricao: "Mochila Ludovico, um chocomonstro cheio de estilo!",
-    preco: 64.99,
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_851748-MLB87499126031_072025-O-mochila-ludovico-cacau-show.webp",
+    descricao: "A Cesta Chocomonstros da Monstrinha Claudete é feita em pelúcia macia com estrutura reforçada, para brincar e decorar.",
+    preco: 34.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw00161dda/large/2005658_2.png",
   },{
     id: 249,
-    nome: "Mochila dinossauro",
+    nome: "Cesta chocomonstros do Monstrinho Ludovico",
     categoria: "kids",
-    descricao: "Mochila dinossauros. A mochila mais divertida e cheia de estilo!",
-    preco: 59.99,
-    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw0d47833d/large/1003555_3.png",
+    descricao: "A Cesta Chocomonstros do Monstrinho Ludovico é feita em pelúcia macia com estrutura reforçada, ideal para brincar e decorar.",
+    preco: 34.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw7e97bad7/large/2005658_3.png",
   },{
     id: 250,
-    nome: "Bolsa Pampili Chocomonstros Roxa",
+    nome: "Cesta chocomonstros do Monstrinho Adamastor",
     categoria: "kids",
-    descricao: "A Bolsa Pampili Chocomonstros Roxa da parceria entre Pampili e Cacau Show vem para acompanhar os pequenos em cada momento especial, além de ser um presente que encanta!",
-    preco: 159.90,
-    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw192be27a/large/2005239_1-Photoroom.png",
+    descricao: "A Cesta Chocomonstros do Monstrinho Adamastor é feita em pelúcia macia, com estrutura reforçada, ideal para brincar e decorar.",
+    preco: 34.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw2fd2884d/large/2005658_1.png",
   },{
     id: 251,
     nome: "Bolsa Pampili de Led Chocomonstros Colorida",
@@ -3141,6 +3251,20 @@ body.natal-theme::after {
     descricao: "O Panetone laCreme ao Leite da Cacau Show conta com uma massa macia, com gotas de chocolate ao leite e um delicioso recheio cremoso de chocolate ao leite laCreme.!",
     preco: 89.99,
     imagem: "natal2.jpg",
+  },{
+    id: 257,
+    nome: "Mochila dinossauros",
+    categoria: "kids",
+    descricao: "Uma mochila monstruosa! Estilo e força, a mochila do dinossauro traz tudo isso",
+    preco: 59.90,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw0d47833d/large/1003555_3.png",
+  },{
+    id: 258,
+    nome: "Mochila Chocomonstro Ludovico",
+    categoria: "kids",
+    descricao: "Uma mochila monstruosa!",
+    preco: 64.99,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_851748-MLB87499126031_072025-O-mochila-ludovico-cacau-show.webp",
   }
 ];
 
@@ -3381,6 +3505,49 @@ addToCartBtn.addEventListener('click', () => {
   } 
 });
 
+function startNatalCountdown() {
+  const countdown = document.getElementById('natal-countdown');
+  countdown.style.display = 'flex'; // mostra a contagem
+  const natal = new Date("December 25, 2025 00:00:00").getTime();
+
+  if(countdown.dataset.active) return; // evita múltiplos intervalos
+  countdown.dataset.active = true;
+
+  const interval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = natal - now;
+
+    if(distance < 0){
+      clearInterval(interval);
+      countdown.innerHTML = "<h3>🎄 Feliz Natal! 🎄</h3>";
+      return;
+    }
+
+    const dias = Math.floor(distance / (1000*60*60*24));
+    const horas = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutos = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const segundos = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById("dias").innerText = dias;
+    document.getElementById("horas").innerText = horas;
+    document.getElementById("minutos").innerText = minutos;
+    document.getElementById("segundos").innerText = segundos;
+  }, 1000);
+}
+
+// Mostra apenas na aba Natal
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    const countdown = document.getElementById('natal-countdown');
+    if (chip.dataset.category === 'natal') {
+      countdown.style.display = 'flex';
+    } else {
+      countdown.style.display = 'none';
+    }
+  });
+});
+
+
 // === Carousel simples ===
 function showSlide(i) {
   if(i < 0) i = dots.length-1;
@@ -3410,6 +3577,40 @@ whatsappBtn.addEventListener('click', e => {
     window.open(`https://wa.me/5549991599778?text=${encoded}`, "_blank");
   else 
     window.open(`https://wa.me/5549991099778?text=${encoded}`, "_blank");
+});
+// === Contagem regressiva Natal ===
+function startNatalCountdown() {
+  const natal = new Date("December 25, 2025 00:00:00").getTime();
+
+  const interval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = natal - now;
+
+    if(distance < 0){
+      clearInterval(interval);
+      document.getElementById("natal-countdown").innerHTML = "🎄 Feliz Natal! 🎄";
+      return;
+    }
+
+    const dias = Math.floor(distance / (1000*60*60*24));
+    const horas = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutos = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const segundos = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById("dias").innerText = dias;
+    document.getElementById("horas").innerText = horas;
+    document.getElementById("minutos").innerText = minutos;
+    document.getElementById("segundos").innerText = segundos;
+  }, 1000);
+}
+
+// Ativar apenas quando a aba Natal estiver ativa
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    if(chip.dataset.category === 'natal'){
+      startNatalCountdown();
+    }
+  });
 });
 
 // === Inicialização ===
