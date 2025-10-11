@@ -836,14 +836,14 @@ body.natal-theme::after {
   from { background-position: 0 -100%; }
   to   { background-position: 0 100%; }
 }
-/* CONTAGEM REGRESSIVA NATAL */
+/* --- CONTAGEM REGRESSIVA NATAL Cacau Show Style --- */
 .countdown {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #c62828, #e53935);
+  background: linear-gradient(135deg, #6b1b1b, #b71c1c);
   padding: 15px 25px;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -851,49 +851,50 @@ body.natal-theme::after {
   font-family: 'Mountains of Christmas', cursive;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  border: 3px solid #ffd700;
+  border: 3px solid #d4af37;
   overflow: hidden;
 }
 
-/* Título com emojis natalinos */
+/* Título com brilho dourado */
 .countdown h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 900;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 6px #000;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px #ffd700;
+  color: #fff8dc;
 }
 
 /* Container dos números */
 .countdown .time {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 
 /* Box dos números */
 .countdown .time-box {
-  background: #ff3d00;
+  background: linear-gradient(180deg, #b22222, #8b0000);
   color: #fff;
   border-radius: 12px;
   padding: 10px 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 12px rgba(255,215,0,0.9), 0 3px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 0 12px rgba(255,215,0,0.8), 0 3px 8px rgba(0,0,0,0.5);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   border: 1px solid #ffd700;
 }
 
 /* Números com brilho dourado */
 .countdown .time-box span {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 900;
   text-shadow: 0 0 6px #ffd700, 1px 1px 2px #000;
 }
 
 /* Labels */
 .countdown .time-box .label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   margin-top: 2px;
   color: #ffe082;
   text-shadow: 1px 1px 2px #000;
@@ -907,22 +908,22 @@ body.natal-theme::after {
 }
 
 /* Luzes de Natal piscando */
-.countdown .lights {
+.countdown .garland {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
-  left: 0;
-  pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
 }
 
-.countdown .lights span {
-  position: absolute;
-  width: 6px;
-  height: 6px;
+.countdown .garland .light {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #ffeb3b;
   animation: blink 1.5s infinite alternate;
+  box-shadow: 0 0 10px #ffeb3b;
 }
 
 @keyframes blink {
@@ -930,6 +931,60 @@ body.natal-theme::after {
   50% { opacity: 1; transform: scale(1.2); }
   100% { opacity: 0.2; transform: scale(1); }
 }
+
+/* Decorações */
+.countdown .decorations {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.4rem;
+}
+
+/* --- AJUSTES RESPONSIVOS PARA CELULAR --- */
+@media (max-width: 600px) {
+  .countdown {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .countdown h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    line-height: 1.3em;
+  }
+
+  .countdown .time {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .countdown .time-box {
+    padding: 8px 10px;
+    min-width: 65px;
+  }
+
+  .countdown .time-box span {
+    font-size: 1.1rem;
+  }
+
+  .countdown .time-box .label {
+    font-size: 0.65rem;
+  }
+
+  .countdown .decorations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  .countdown .garland {
+    transform: scale(0.85);
+  }
+}
+
 
 
   </style>
@@ -1020,11 +1075,11 @@ body.natal-theme::after {
         <!-- Promo 3 -->
         <article class="slide" role="listitem" aria-label="Promo 3">
           <div class="promo">
-            <h2>Chocomonstros!</h2>
-            <p>Copos monstruosamente fofos para colecionar!</p>
+            <h2>Dia dos Professores.</h2>
+            <p>O dia dos professores está chegando! São 4 tabletes 30g por apenas 29,99 ou leve 5 por 34,99!</p>
             <a class="cta" href="#grid" data-track="promo-3">Explorar</a>
           </div>
-          <img src="https://www.cacaushow.com.br/dw/image/v2/BFJD_PRD/on/demandware.static/-/Sites-CacauShow-Library/default/dw1c93cb8a/Home/Banner-Carrossel/1264x530_chocomonstro.jpg" alt="Tabletes de chocolate"/>
+          <img src="https://www.cacaushow.com.br/dw/image/v2/BFJD_PRD/on/demandware.static/-/Sites-CacauShow-Library/default/dwa66cd789/Home/Banner-Carrossel/1264x530_professores%20px.jpg" alt="Tabletes de chocolate"/>
         </article>
 
         <!-- Novidade 4 -->
@@ -1052,11 +1107,11 @@ body.natal-theme::after {
         <!-- Presentes 6 -->
         <article class="slide" role="listitem" aria-label="Novidade 6">
           <div class="promo">
-            <h2>Dia dos professores</h2>
-            <p>O dia dos professores está chegando! Presenteie e surpreenda com Cacau Show!</p>
+            <h2>Copos chocomonstros</h2>
+            <p>Chegaram! Os copos monstruosamente fofos, feitos para colecionar.</p>
             <a class="cta" href="#grid" data-track="novidade-6">Escolher agora</a>
           </div>
-        <img src="https://www.cacaushow.com.br/dw/image/v2/BFJD_PRD/on/demandware.static/-/Sites-CacauShow-Library/default/dw38039589/Home/Banner-Carrossel/Header-Banner-Desk1264x530.jpg" alt="caixas">
+        <img src="https://www.cacaushow.com.br/dw/image/v2/BFJD_PRD/on/demandware.static/-/Sites-CacauShow-Library/default/dw1c93cb8a/Home/Banner-Carrossel/1264x530_chocomonstro.jpg" alt="caixas">
         </article>
 
         <!-- Funcionais 7 -->
@@ -1109,6 +1164,7 @@ body.natal-theme::after {
         <button class="chip" data-category="drageados">Drageados</button>
         <button class="chip" data-category="caixas">Caixas e presentes</button>
         <button class="chip" data-category="kids">Crianças</button>
+        <button class="chip" data-category="professores">Dia dos Professores</button>
         <button class="chip" data-category="harry">Harry Potter</button>
         <button class="chip" data-category="natal">Natal</button>
         <button class="chip" data-category="life">Linha Lifestyle</button>
@@ -2000,6 +2056,7 @@ body.natal-theme::after {
       descricao: "Uma seleção especial com 70 tabletinhos de 5g em 7 sabores irresistíveis, do branco ao 80% cacau. Perfeito para degustar e compartilhar!",
       preco: 109.99,
       imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw86381f2b/large/1003124_1.png",
+      esgotado:true,
     },
      {
       id: 103, 
@@ -2024,7 +2081,7 @@ body.natal-theme::after {
       descricao: "Com uma seleção especial de bombons que combinam texturas e recheios irresistíveis.",
       preco: 99.99,
       imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw58114aac/large/1001680_1.png",
-      esgotado:true,
+      esgotado:false,
     },
      {
       id: 106, 
@@ -2065,7 +2122,7 @@ body.natal-theme::after {
       descricao: "Conheça o Cofre Cremilda Trufas laCreme Kids ao Leite da Cacau Show, trufas deliciosas em um lindo cofrinho da nossa vaquinha Cremilda, um encanto.",
       preco: 49.99,
       imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw1799e887/large/1001698_2.png",
-      esgotado:true,
+      esgotado:false,
     },
      {
       id: 111, 
@@ -2074,7 +2131,7 @@ body.natal-theme::after {
       descricao: "Conheça a Caixa de Trufas laCreme ao Leite, sofisticada e de sabor marcante com as trufas laCreme, perfeita para presentear e transformar qualquer momento em celebrações..",
       preco: 79.99,
       imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw6ca5cf08/large/1000690_1.png",
-      esgotado:true,
+      esgotado:false,
     },
      {
       id: 112, 
@@ -2208,7 +2265,7 @@ body.natal-theme::after {
       descricao: "Bomboms com recheio de brigadeiro em uma embalagem com a mensagem feliz hoje!",
       preco: 29.99,
       imagem: "https://m.media-amazon.com/images/I/51v0prBRF+L._UF894,1000_QL80_.jpg",
-      esgotado:true,
+      esgotado:false,
     },
      {
       id: 126, 
@@ -2419,6 +2476,7 @@ body.natal-theme::after {
       descricao: "Tabletes de chocolate ao leite e branco em uma caixa presenteável, perfeitos para encantar.",
       preco: 49.99,
       imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw77723447/large/1003493_1.jpg",
+      esgotado:true,
     },
      {
       id: 152,
@@ -2627,7 +2685,7 @@ body.natal-theme::after {
       descricao: "Cappuccino cacau show",
       preco: 9.00,
       imagem: "https://mercafefaststore.vtexassets.com/arquivos/ids/552387/CAPPUCCINO-CLASSIC.png?v=638844910036330000",
-      esgotado:true,  
+      esgotado:false,  
     }
 ,
      {
@@ -2706,12 +2764,12 @@ body.natal-theme::after {
     },
      {
       id: 186,
-      nome: "Caixa bombons doce café | 80g",
+      nome: "Caixa bombons sortidos | 80g",
       categoria: "caixas",
-      descricao: "Bombons sortidos com recheios de café e doce de leite, cobertos por chocolate ao leite e branco. Uma combinação envolvente",
+      descricao: "A Caixa de Bombons Sortidos é uma seleção de bombons de sabores variados, em uma embalagem prática. Ótima escolha para um presente singelo ou para saborear em qualquer momento!",
       preco: 24.99,
-      imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw97af007e/large/1003717_1.png",
-      esgotado:true,
+      imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw2688e52f/large/1003109_2.png",
+      esgotado:false,
     },
      {
       id: 187,
@@ -2944,7 +3002,7 @@ body.natal-theme::after {
     descricao: "Uma linda lata do Chapéu Seletor do Harry Potter, além de deliciosas trufas.",
     preco: 54.99,
     imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw8f09d33a/large/1003778_0.png",
-    esgotado:true,
+    esgotado:false,
     status:"novo",
   },
   {
@@ -3226,11 +3284,11 @@ body.natal-theme::after {
     imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw00161dda/large/2005658_2.png",
   },{
     id: 252,
-    nome: "Mochila Pampili de Led Chocomonstros Colorida",
+    nome: "Estojo Animadinha",
     categoria: "kids",
-    descricao: "A Mochila Pampili de Led Chocomonstros Colorida da parceria entre Pampili e Cacau Show vem para tornar o dia a dia dos pequenos ainda mais alegre e divertido!",
-    preco: 189.90,
-    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw76ddee65/large/2005244_2-Photoroom.png",
+    descricao: "Estojo na cor rosa da carismática Ursinha Animadinha com trufas sabor torta de morango 13,5g, perfeito para fãs e colecionadores.!",
+    preco: 49.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw1346fe4f/large/1003792_1.png",
   },{
     id: 253,
     nome: "Licor de chocolate | 375ml",
@@ -3261,11 +3319,11 @@ body.natal-theme::after {
     imagem: "natal2.jpg",
   },{
     id: 257,
-    nome: "Mochila dinossauros",
+    nome: "Estojo Zangadinho",
     categoria: "kids",
-    descricao: "Uma mochila monstruosa! Estilo e força, a mochila do dinossauro traz tudo isso",
-    preco: 59.90,
-    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw0d47833d/large/1003555_3.png",
+    descricao: "Estojo do Ursinho Zangadinho, acompanhado de trufas deliciosas 13,5g no sabor de torta de morango.",
+    preco: 49.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw8a9e28a2/large/1003793_1.png",
   },{
     id: 258,
     nome: "Mochila Chocomonstro Ludovico",
@@ -3329,6 +3387,57 @@ body.natal-theme::after {
     descricao: "Descubra a magia e a cremosidade da cesta Harry Potter!",
     preco: 263.73,
     imagem: "harrycesta.jpg",
+    esgotado:true,
+  },{
+    id: 267,
+    nome: "Caixa tabletes professores | 90g",
+    categoria: "professores",
+    descricao: "Surpreenda com a Caixa de Tabletes Professores, uma caixa com 3 tabletes de chocolate ao leite com mensagens especiais, para homenagear  os professores.",
+    preco: 26.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw1bf8c8ff/large/1003776_1.png",
+  },{
+    id: 268,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw54fbccb5/large/1003713_1.png",
+  },{
+    id: 269,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw037cd085/large/1003713_2.png",
+  },{
+    id: 270,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw142b7d0f/large/1003713_3.png",
+  },{
+    id: 271,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw9a71de3d/large/1003713_4.png",
+  }
+  ,{
+    id: 272,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dwba691999/large/1003713_5.png",
+  },{
+    id: 273,
+    nome: "Tabletes professores sortidos | 30g",
+    categoria: "professores",
+    descricao: "Tablete de chocolate ao leite 30g em sabores sortidos, com embalagem especial para homenagear os professores.",
+    preco: 9.99,
+    imagem: "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dwfc135f51/large/1003713_6.png",
   }
 ];
 
